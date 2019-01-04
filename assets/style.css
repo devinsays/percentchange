@@ -1,0 +1,47 @@
+body {
+	background-image: linear-gradient(130deg, #F7FAFC 3%, #DFEBF7 100%);
+	margin: 0;
+	font-family: 'Rubik', sans-serif;
+	color: #04286E;
+}
+header {
+	text-align: center;
+	padding: 3em 1em;
+	background: rgba(0,0,0,.05);
+}
+h1 {
+	margin: 0;
+	font-size: 32px;
+	line-height: 1;
+}
+label {
+	display: block;
+	margin-bottom: 0.5em;
+}
+#calculator {
+	max-width: 480px;
+	margin: 0 auto;
+	padding: 40px;
+}
+.value {
+	margin-bottom: 1em;
+}
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+}
+input {
+	width: 100%;
+	padding: .75em 1em;
+}
+button {
+	width: 100%;
+	padding: .75em 1em;
+	margin-bottom: 1em;
+}
+.forumula {
+	text-align: center;
+}
+
+@media (min-width: 680px) {
+}
