@@ -3,20 +3,26 @@ body {
 	margin: 0;
 	font-family: 'Rubik', sans-serif;
 	color: #04286E;
+	font-size: 18px;
 }
 header {
 	text-align: center;
 	padding: 3em 1em;
 	background: rgba(0,0,0,.05);
 }
-h1 {
+header p {
+	margin: 0;
+}
+header h1 {
 	margin: 0;
 	font-size: 32px;
 	line-height: 1;
+	margin-bottom: 15px;
 }
 label {
 	display: block;
 	margin-bottom: 0.5em;
+	font-size: 16px;
 }
 #calculator {
 	max-width: 480px;
@@ -27,17 +33,43 @@ label {
 	margin-bottom: 1em;
 }
 button, input, select, textarea {
-    font-size: 100%;
-    margin: 0;
+	font-size: 100%;
+	margin: 0;
 }
 input {
 	width: 100%;
 	padding: .75em 1em;
+	border: none;
+	box-shadow: 0 0 0 2px rgba(0,0,0,.05);
+	position: relative;
 }
+input:focus {
+	outline: none;
+	animation: shadow-animation 0.3s forwards;
+}
+
+@keyframes shadow-animation {
+	0% { box-shadow: 0 0 0 2px rgba(0,0,0,.05); }
+	70% { box-shadow: 0 0 0 8px rgba(0,0,0,.05); }
+	100% { box-shadow:0 0 0 2px rgba(0,0,0,.05); }
+}
+
 button {
 	width: 100%;
 	padding: .75em 1em;
 	margin-bottom: 1em;
+	border: none;
+	box-shadow: 0 0 0 2px rgba(0,0,0,.05);
+}
+#result {
+	text-align: center;
+	padding: 1em;
+	opacity: 0;
+	min-height: 30px;
+	transition: opacity .2s;
+}
+#result.is-active {
+	opacity: 1;
 }
 .forumula {
 	text-align: center;

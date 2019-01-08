@@ -3,6 +3,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/style.css" />
 		<title>Percent Change Calculator</title>
+		<meta name="description" content="Calculate the percentage increase or decrease between two numbers." />
 	</head>
 	<body>
 		<header>
@@ -13,11 +14,11 @@
 			<form id="calculator">
 				<div class="value">
 					<label>First Value</label>
-					<input id="v1" name="first" type="text">
+					<input id="v1" name="first" type="number" step="any" required>
 				</div>
 				<div class="value">
 					<label>Second Value</label>
-					<input id="v2" name="second" type="text">
+					<input id="v2" name="second" type="number" step="any" required>
 				</div>
 				<button id="submit" type="submit">Calculate</button>
 				<div id="result"></div>
@@ -30,13 +31,14 @@
 
 		<script>
 			const calculator = document.querySelector('#calculator');
-			console.log(calculator);
-			calculator.addEventListener('submit', function(e) {
+			const result = document.querySelector('#result');
+			calculator.addEventListener('submit', (e) => {
 				e.preventDefault();
 				const v1 = document.querySelector('#v1').value;
 				const v2 = document.querySelector('#v2').value;
-				const result = ((v2 - v1) / v1) * 100;
-				document.querySelector('#result').innerHTML = result + '%';
+				const response = ((v2 - v1) / v1) * 100;
+				result.innerHTML = '<span class="success">' + response + '%</span>';
+				result.classList.add('is-active');
 			});
 		</script>
 	</body>
