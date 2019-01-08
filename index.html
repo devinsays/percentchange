@@ -36,7 +36,10 @@
 				e.preventDefault();
 				const v1 = document.querySelector('#v1').value;
 				const v2 = document.querySelector('#v2').value;
-				const response = ((v2 - v1) / v1) * 100;
+				let response = ((v2 - v1) / v1) * 100;
+				
+				// Rounds to four decimal places.
+				response = response.toFixed(4).replace(/\.?0*$/g,'');
 				result.innerHTML = '<span class="success">' + response + '%</span>';
 				result.classList.add('is-active');
 			});
