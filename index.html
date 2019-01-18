@@ -1,3 +1,5 @@
+<!-- Hi there! -->
+<!-- Feedback welcome: https://github.com/devinsays/percentchange -->
 <html>
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -7,6 +9,7 @@
 		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<meta name="google-site-verification" content="7tUe2nf9xsyJy5TgV1XpY3CNvYxCpAkpAfuNA4391bE" />
 	</head>
 	<body>
 		<header>
@@ -37,12 +40,16 @@
 			const result = document.querySelector('#result');
 			calculator.addEventListener('submit', (e) => {
 				e.preventDefault();
+				
+				// Get values and calculate result.
 				const v1 = document.querySelector('#v1').value;
 				const v2 = document.querySelector('#v2').value;
 				let response = ((v2 - v1) / v1) * 100;
 				
 				// Rounds to four decimal places.
 				response = response.toFixed(4).replace(/\.?0*$/g,'');
+				
+				// Display result.
 				result.innerHTML = '<span class="success">' + response + '%</span>';
 				result.classList.add('is-active');
 			});
